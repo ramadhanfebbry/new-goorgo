@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta name="generator" content="4.0.557.204"/>
+  <title>Home</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= yield :head %>
+  <%= csrf_meta_tags %>
+  <!-- Other scripts -->
+  <script type="text/javascript">
+  document.documentElement.className += ' js';
+  </script>
+</head>
+<body>
+  <%= yield %>
+  <!-- JS includes -->
+  <%= javascript_include_tag "application" %>
+  <%= render "shared/javascript" %>
+</body>
+</html>
+

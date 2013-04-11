@@ -1,0 +1,116 @@
+<% content_for :head do %>
+<link rel="stylesheet" type="text/css" href="/assets/css/master_a-master.css?54929036"/>
+<link rel="stylesheet" type="text/css" href="/assets/css/index.css?532702308" id="pagesheet"/>
+<% end %>
+<div class="clearfix" id="page"><!-- column -->
+ <div class="position_content" id="page_position_content">
+  <div class="clearfix colelem" id="pu72"><!-- group -->
+   <div class="grpelem" id="u72"><!-- image -->
+    <img class="block" id="u72_img" src="images/head.png" alt="" width="1024" height="112"/>
+  </div>
+  <%= link_to "<p>HOME</p>".html_safe, root_path, class: "nonblock nontext MuseLinkActive clearfix grpelem", id: "u1031-4" %>
+  <%= link_to "<p>ABOUT US</p>".html_safe, about_us_path, class: "nonblock nontext clearfix grpelem", id: "u1032-4" %>
+<%= link_to "<p>PRIVACY</p>".html_safe, privacy_path, class: "nonblock nontext clearfix grpelem", id: "u1033-4" %>
+
+  <%= link_to "<p>TERM Of USE</p>".html_safe, term_of_use_path, class: "nonblock nontext clearfix grpelem", id: "u1034-4" %>
+
+  <div class="clearfix grpelem" id="u1262-4"><!-- content -->
+    <p>Best search engine by Goorgo</p>
+  </div>
+</div>
+<div class="clearfix colelem" id="pu77"><!-- group -->
+ <div class="shadow clearfix grpelem" id="u77"><!-- group -->
+  <div class="clearfix grpelem" id="pu93"><!-- column -->
+    <%= render "shared/home_icons" %>
+    <div class="clearfix grpelem" id="u1263-5"><!-- content -->
+      <p id="u1263-3"><span>goorgo</span><span id="u1263-2">.com</span></p>
+    </div>
+  </div>
+  <img class="colelem" id="u1492-4" src="images/u1492-4.png" alt="Buy product on GO!!" width="309" height="37"/><!-- rasterized frame -->
+  <div class="clearfix colelem" id="pu1164"><!-- group -->
+   <div class="grpelem" id="u1164"><!-- image -->
+    <img class="block" id="u1164_img" src="images/search.png" alt="" width="580" height="100"/>
+  </div>
+  <a class="nonblock nontext grpelem" id="u1169" onclick="searchProduct()"><!-- state-based BG images --></a>
+  <div class="grpelem" id="u503"><!-- custom html -->
+    <br>
+    <div id="search-container" class="container">
+      <h2 class="pull-left"></h2>
+      <form id="search-product" action="/result" method="GET">
+      <input class="search_bar xxlarge pull-left" id="search" name="search" " size="16" row="2" font size="40px" placeholder="Text" type="text" />
+      <input type="submit" style="display:none">
+    </form>
+    </div>
+
+
+  </div>
+</div>
+<img class="colelem" id="u1497-4" src="images/u1497-4.png" alt="You take it now." width="390" height="59"/><!-- rasterized frame -->
+<div class="verticalspacer"></div>
+<form class="form-grp clearfix colelem" id="widgetu320" method="post" enctype="multipart/form-data" onSubmit="alert('This standard HTML form is configured to work with Adobe Business Catalyst.'); return false;"><!-- group -->
+ <div class="fld-grp clearfix grpelem" id="widgetu322" data-required="true"><!-- group -->
+  <label class="fld-label actAsDiv clearfix grpelem" id="u325-4" for="widgetu322_input"><!-- content -->
+   <span class="actAsPara">Name:</span>
+ </label>
+ <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u323-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu322_input" name="FormFieldName" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu322_prompt" for="widgetu322_input"><span class="actAsPara">Your Name</span></label></span>
+</div>
+<div class="fld-grp clearfix grpelem" id="widgetu338" data-required="true" data-type="email"><!-- group -->
+  <label class="fld-label actAsDiv clearfix grpelem" id="u339-4" for="widgetu338_input"><!-- content -->
+   <span class="actAsPara">Email:</span>
+ </label>
+ <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u340-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu338_input" name="FormFieldName" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu338_prompt" for="widgetu338_input"><span class="actAsPara">name@email.com</span></label></span>
+</div>
+<div class="clearfix grpelem" id="u343-4"><!-- content -->
+  <p>Submitting Form...</p>
+</div>
+<div class="clearfix grpelem" id="u337-4"><!-- content -->
+  <p>The server encountered an error.</p>
+</div>
+<div class="clearfix grpelem" id="u321-4"><!-- content -->
+  <p>Form received.</p>
+</div>
+<input class="submit-btn NoWrap grpelem" id="u332-17" type="submit" value="" tabindex="4"/><!-- state-based BG images -->
+<div class="fld-grp clearfix grpelem" id="widgetu327" data-required="false"><!-- group -->
+  <label class="fld-label actAsDiv clearfix grpelem" id="u328-4" for="widgetu327_input"><!-- content -->
+   <span class="actAsPara">Message:</span>
+ </label>
+ <span class="fld-textarea actAsDiv rounded-corners clearfix grpelem" id="u331-4"><!-- content --><textarea class="wrapped-input" id="widgetu327_input" name="FormFieldName" tabindex="3"></textarea><label class="wrapped-input fld-prompt" id="widgetu327_prompt" for="widgetu327_input"><span class="actAsPara">Add a brief message...</span></label></span>
+</div>
+</form>
+<div class="clearfix colelem" id="pu344-4"><!-- group -->
+ <div class="clearfix grpelem" id="u344-4"><!-- content -->
+  <p id="u344-2">Help</p>
+</div>
+<div class="clearfix grpelem" id="u349-4"><!-- content -->
+  <p id="u349-2">Catalogue</p>
+</div>
+</div>
+<div class="clearfix colelem" id="pu345-14"><!-- group -->
+ <div class="clearfix grpelem" id="u345-14"><!-- content -->
+  <p id="u345-3"><%= link_to "Home", root_path, class: "nonblock" %></p>
+  <p id="u345-6"><%= link_to "About us", about_us_path, class: "nonblock" %></p>
+  <p id="u345-9"><%= link_to "Privacy", privacy_path, class: "nonblock" %></p>
+  <p id="u345-12">
+    <%= link_to "Terms of Use", term_of_use_path, class: "nonblock" %>
+    </p>
+</div>
+<div class="clearfix grpelem" id="pu346-4"><!-- column -->
+  <div class="clearfix colelem" id="u346-4"><!-- content -->
+   <p id="u346-2">Books | Cameras &amp; Camcorders | Mobiles &amp; Accessories | Apparel &amp; Accessories | Jewellery &amp; Watches | Electronics | Home &amp; Kitchen | Toys &amp; Games | Gifts &amp; Flowers | Computer &amp; Peripherals | Kids &amp; Baby | Health &amp; Beauty | Household Appliances | Footwear | Clothing | Accessories | Watches | Office &amp; Stationary | All Brands</p>
+ </div>
+ <div class="colelem" id="u1110"><!-- image -->
+   <img class="block" id="u1110_img" src="images/goorgo-logo.png" alt="" width="233" height="93"/>
+ </div>
+</div>
+</div>
+<div class="clearfix colelem" id="u350-7"><!-- content -->
+ <p>©&nbsp; 2013 <a class="nonblock" href="index.html">www.GoorGo.com</a>&nbsp;All Rights Reserved</p>
+</div>
+</div>
+</div>
+<div class="preload_images">
+ <img class="preload" src="images/u1169-r.png" alt=""/>
+ <img class="preload" src="images/u332-17-r.png" alt=""/>
+ <img class="preload" src="images/u332-17-m.png" alt=""/>
+ <img class="preload" src="images/u332-17-fs.png" alt=""/>
+</div>
