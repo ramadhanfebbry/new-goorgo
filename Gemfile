@@ -23,6 +23,11 @@ end
 
 gem 'therubyracer'
 gem 'jquery-rails'
+gem 'amazon-ecs'
+gem 'ruby-aaws'
+gem 'httpclient'
+gem 'nokogiri'
+gem "truncate_html"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

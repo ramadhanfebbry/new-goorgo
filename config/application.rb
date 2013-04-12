@@ -59,5 +59,11 @@ module NewGoorgo
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    Amazon::Ecs.configure do |options|
+      options[:associate_tag] = 'goorgo0f-20'
+      options[:AWS_access_key_id] = 'AKIAIZ23BIQHGDEQXJGA'
+      options[:AWS_secret_key] = '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'
   end
+end
 end
