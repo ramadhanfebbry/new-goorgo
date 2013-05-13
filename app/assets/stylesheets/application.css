@@ -11,3 +11,16 @@
  *= require_self
  *= require css/site_global.css
  */
+input#search{
+	width:79%;
+	float:left;
+	height:31px;
+	background-color: #FCFCFC;
+	border: 1px solid #D0D0D0 !important;
+	color: #BCBCBC;
+}
+
+
+.img-btn-submit {
+    width:30px;
+}

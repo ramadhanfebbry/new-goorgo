@@ -22,30 +22,17 @@
  <div class="shadow clearfix grpelem" id="u77"><!-- group -->
   <div class="clearfix grpelem" id="pu93"><!-- column -->
     <%= render "shared/home_icons" %>
-    <div class="clearfix grpelem" id="u1263-5"><!-- content -->
-      <p id="u1263-3"><span>goorgo</span><span id="u1263-2">.com</span></p>
-    </div>
   </div>
-  <img class="colelem" id="u1492-4" src="images/u1492-4.png" alt="Buy product on GO!!" width="309" height="37"/><!-- rasterized frame -->
-  <div class="clearfix colelem" id="pu1164"><!-- group -->
-   <div class="grpelem" id="u1164"><!-- image -->
-    <img class="block" id="u1164_img" src="images/search.png" alt="" width="580" height="100"/>
+  <div style="clear:both"></div>
+  <div style="color: #fff; font-family: arial,sans-serif; font-size: 20px; font-weight: bold; left: 175px; position: absolute;" nowrap="nowrap">Happy searching..</div><!-- rasterized frame -->
+  <div style="clear:both"></div>
+  <div style="padding-top:25px;">
+    <%= text_field_tag :search, params[:search] %>
+    <div style="background:#ccc;width:5%;float:left">
+    <a href="#"><%= image_tag("search.png", class: "img-btn-submit")%></a></div>
   </div>
-  <a class="nonblock nontext grpelem" id="u1169" onclick="searchProduct()"><!-- state-based BG images --></a>
-  <div class="grpelem" id="u503"><!-- custom html -->
-    <br>
-    <div id="search-container" class="container">
-      <h2 class="pull-left"></h2>
-      <form id="search-product" action="/result" method="GET">
-      <input class="search_bar xxlarge pull-left" id="search" name="search" " size="16" row="2" font size="40px" placeholder="Text" type="text" />
-      <input type="submit" style="display:none">
-    </form>
-    </div>
-
-
-  </div>
-</div>
-<img class="colelem" id="u1497-4" src="images/u1497-4.png" alt="You take it now." width="390" height="59"/><!-- rasterized frame -->
+  <div style="clear:both"></div>
+<div style="color: #fff; font-family: arial,sans-serif; font-size: 20px; float:right;text-align:right;font-weight: bold; left: 175px;margin-right:80px" nowrap="nowrap">Find it and gooo.</div><!-- rasterized frame -->
 <div class="verticalspacer"></div>
 <form class="form-grp clearfix colelem" id="widgetu320" method="post" enctype="multipart/form-data" onSubmit="alert('This standard HTML form is configured to work with Adobe Business Catalyst.'); return false;"><!-- group -->
  <div class="fld-grp clearfix grpelem" id="widgetu322" data-required="true"><!-- group -->
