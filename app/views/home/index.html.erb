@@ -26,9 +26,10 @@
   <div style="clear:both"></div>
   <div style="color: #fff; font-family: arial,sans-serif; font-size: 20px; font-weight: bold; left: 175px; position: absolute;" nowrap="nowrap">Happy searching..</div><!-- rasterized frame -->
   <div style="clear:both"></div>
-  <div style="padding-top:25px;">
+  <div style="padding-top:25px;
+  ">
     <%= text_field_tag :search, params[:search] %>
-    <div style="background:#ccc;width:5%;float:left">
+    <div style="background:#ccc;width:5%;float:left;border: 2px solid #2b2e31 !important;">
     <a href="#"><%= image_tag("search.png", class: "img-btn-submit")%></a></div>
   </div>
   <div style="clear:both"></div>
@@ -69,7 +70,7 @@
   <p id="u344-2">Help</p>
 </div>
 <div class="clearfix grpelem" id="u349-4"><!-- content -->
-  <p id="u349-2">Catalogue</p>
+  <p id="u349-2">categories</p>
 </div>
 </div>
 <div class="clearfix colelem" id="pu345-14"><!-- group -->
@@ -83,7 +84,7 @@
 </div>
 <div class="clearfix grpelem" id="pu346-4"><!-- column -->
   <div class="clearfix colelem" id="u346-4"><!-- content -->
-   <p id="u346-2">Books | Cameras &amp; Camcorders | Mobiles &amp; Accessories | Apparel &amp; Accessories | Jewellery &amp; Watches | Electronics | Home &amp; Kitchen | Toys &amp; Games | Gifts &amp; Flowers | Computer &amp; Peripherals | Kids &amp; Baby | Health &amp; Beauty | Household Appliances | Footwear | Clothing | Accessories | Watches | Office &amp; Stationary | All Brands</p>
+   <p id="u346-2"><%= link_to 'Books', product_category_path('books')%> | <%= link_to 'Cameras & Camcorders', product_category_path('cameras')%>  | <%= link_to 'Mobiles & Accessories', product_category_path('mobiles')%>  | <%= link_to 'Apparel & Accessories', product_category_path('apparel')%> | <%= link_to 'Jewellery & Watches', product_category_path('jewellery')%> | <%= link_to 'Electronics', product_category_path('electronics')%> | <%= link_to 'Home & Kitchen', product_category_path('kitchen')%> | <%= link_to 'Toys & Games', product_category_path('games')%> | <%= link_to 'Gifts & Flowers', product_category_path('gifts')%>  | <%= link_to 'Computer & Peripherals', product_category_path('computer')%> | <%= link_to 'Kids & Baby', product_category_path('kids')%> | <%= link_to 'Health & Beauty', product_category_path('health')%> | <%= link_to 'Household Appliances', product_category_path('appliances')%> | <%= link_to 'Footwear', product_category_path('footwear')%> | <%= link_to 'Clothing', product_category_path('clothing')%> | <%= link_to 'Accessories', product_category_path('accessories')%> | <%= link_to 'Watches', product_category_path('watches')%> | <%= link_to 'Office & Stationary', product_category_path('office')%> | <%= link_to 'All Brands', product_category_path('All Brands')%></p>
  </div>
  <div class="colelem" id="u1110"><!-- image -->
    <img class="block" id="u1110_img" src="images/goorgo-logo.png" alt="" width="233" height="93"/>

@@ -5,7 +5,7 @@ NewGoorgo::Application.routes.draw do
   match 'privacy' => 'pages#privacy', as: :privacy
   match 'term_of_use' => 'pages#term_of_use', as: :term_of_use
   match 'result' => 'search#result', as: :search, via: :get
-
+  match 'categories/:name' => 'search#product_category', as: :product_category, via: :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

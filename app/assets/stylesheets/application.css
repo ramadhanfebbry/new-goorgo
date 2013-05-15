@@ -12,15 +12,26 @@
  *= require css/site_global.css
  */
 input#search{
-	width:79%;
+	width:93%;
 	float:left;
-	height:31px;
+	height:33px;
 	background-color: #FCFCFC;
-	border: 1px solid #D0D0D0 !important;
 	color: #BCBCBC;
+
 }
-
-
+input#search:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
 .img-btn-submit {
     width:30px;
+}
+input#search {
+border: 2px solid #2b2e31 !important;
+}
+
+p#u346-2 a, p#u346-2 a:hover, p#u346-2 a:visited{
+	color: #F7931E;
+	text-decoration: none;
 }
