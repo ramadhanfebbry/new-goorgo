@@ -10,18 +10,20 @@
     <div class="shadow gradient grpelem" id="u530"><!-- simple frame --></div>
   </div>
   <div class="grpelem" id="u1292"><!-- image -->
-    <img class="block" id="u1292_img" src="images/search.png" alt="" width="580" height="100"/>
+    
+  <div style="clear:both"></div>
+  <div style="padding-top:25px;
+  ">
+  <form id="search-product" action="#">
+    <%= text_field_tag :search, params[:search] %>
+    <div class="icon-submit-search">
+    <a href="#"><%= image_tag("search.png", class: "img-btn-submit")%></a></div>
+    <%= submit_tag :submit, id: "btn-submit-search"%>
+  </form>
   </div>
-  <a class="nonblock nontext MuseLinkActive grpelem" id="u1294" href="product-search.html"><!-- image --><img class="block" id="u1294_img" src="images/submit-button-small.png" alt="" width="187" height="60"/></a>
-  <div class="grpelem" id="u1296"><!-- custom html -->
-    <br>
-    <div id="search-container" class="container">
-      <h2 class="pull-left"></h2>
-      <input class="search_bar xxlarge pull-left" id="search" name="search" " size="16" row="2" font size="40px" onkeyup="checkSearchVal()" placeholder="Text" type="text" />
-    </div>
-
-
+  <div style="clear:both"></div>
   </div>
+  
   <div class="grpelem" id="u1300"><!-- image -->
     <img class="block" id="u1300_img" src="images/goorgo-logo.png" alt="" width="193" height="77"/>
   </div>

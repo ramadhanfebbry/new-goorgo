@@ -28,9 +28,12 @@
   <div style="clear:both"></div>
   <div style="padding-top:25px;
   ">
+  <form id="search-product" action="#">
     <%= text_field_tag :search, params[:search] %>
-    <div style="background:#ccc;width:5%;float:left;border: 2px solid #2b2e31 !important;">
+    <div class="icon-submit-search">
     <a href="#"><%= image_tag("search.png", class: "img-btn-submit")%></a></div>
+    <%= submit_tag :submit, id: "btn-submit-search"%>
+  </form>
   </div>
   <div style="clear:both"></div>
 <div style="color: #fff; font-family: arial,sans-serif; font-size: 20px; float:right;text-align:right;font-weight: bold; left: 175px;margin-right:80px" nowrap="nowrap">Find it and gooo.</div><!-- rasterized frame -->

@@ -35,3 +35,18 @@ p#u346-2 a, p#u346-2 a:hover, p#u346-2 a:visited{
 	color: #F7931E;
 	text-decoration: none;
 }
+
+#btn-submit-search{
+	display: none
+}
+
+.icon-submit-search{
+	background:#ccc;
+	width:5%;
+	float:left;
+	border: 2px solid #2b2e31 !important;
+}
+
+#u1300:hover{
+	cursor: pointer;
+}

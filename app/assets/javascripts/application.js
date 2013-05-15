@@ -27,3 +27,9 @@ searchProduct = function (){
 $("#search-product").submit(function(){
   searchProduct()
 })
+
+$(".icon-submit-search").bind("click", function(){
+  searchProduct();
+})
+
+$("#u1300").click(function(){document.location='/'})
