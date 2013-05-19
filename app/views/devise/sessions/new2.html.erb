@@ -1,0 +1,17 @@
+<form id="login" action="<%= user_session_path %>" method="POST">
+    <h1 id="ff-proof" class="ribbon">Admin Login &nbsp;&nbsp;</h1>
+    <!-- <div class="apple">
+    	<div class="top"><span></span></div>
+    	<div class="butt"><span></span></div>
+    	<div class="bite"></div>
+	</div> -->
+
+    <fieldset id="inputs">
+        <input id="username" type="text" placeholder="Email" name="user[email]"/>
+        <input id="password" type="password"  placeholder="Password" name="user[password]"/>
+    </fieldset>
+    <fieldset id="actions">
+        <input type="submit" id="submit" value="connection"/>
+       <p class="option"><a href="#">Mot de pass oubli&eacute;</a>&nbsp;&nbsp;|<a href="#">Inscription</a></p>
+    </fieldset>
+</form>

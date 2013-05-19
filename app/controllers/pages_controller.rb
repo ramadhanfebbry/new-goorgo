@@ -7,4 +7,8 @@ class PagesController < ApplicationController
 
   def term_of_use
   end
+
+  def custom
+  	@page = Page.find(params[:title])
+  end
 end

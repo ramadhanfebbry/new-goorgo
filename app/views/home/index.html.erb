@@ -9,10 +9,9 @@
     <img class="block" id="u72_img" src="images/head.png" alt="" width="1024" height="112"/>
   </div>
   <%= link_to "<p>HOME</p>".html_safe, root_path, class: "nonblock nontext MuseLinkActive clearfix grpelem", id: "u1031-4" %>
-  <%= link_to "<p>ABOUT US</p>".html_safe, about_us_path, class: "nonblock nontext clearfix grpelem", id: "u1032-4" %>
-<%= link_to "<p>PRIVACY</p>".html_safe, privacy_path, class: "nonblock nontext clearfix grpelem", id: "u1033-4" %>
-
-  <%= link_to "<p>TERM Of USE</p>".html_safe, term_of_use_path, class: "nonblock nontext clearfix grpelem", id: "u1034-4" %>
+  <% @pages.limit(3).each_with_index do |page, idx| %>
+  <%= link_to "<p>#{page.title.upcase}</p>".html_safe, about_us_path, class: "nonblock nontext clearfix grpelem", id: "u103#{idx+2}-4" %>  
+  <% end %>
 
   <div class="clearfix grpelem" id="u1262-4"><!-- content -->
     <p>Best search engine by Goorgo</p>
@@ -31,21 +30,21 @@
   <form id="search-product" action="#">
     <%= text_field_tag :search, params[:search] %>
     <div class="icon-submit-search">
-    <a href="#"><%= image_tag("search.png", class: "img-btn-submit")%></a></div>
-    <%= submit_tag :submit, id: "btn-submit-search"%>
-  </form>
+      <a href="#"><%= image_tag("search.png", class: "img-btn-submit")%></a></div>
+      <%= submit_tag :submit, id: "btn-submit-search"%>
+    </form>
   </div>
   <div style="clear:both"></div>
-<div style="color: #fff; font-family: arial,sans-serif; font-size: 20px; float:right;text-align:right;font-weight: bold; left: 175px;margin-right:80px" nowrap="nowrap">Find it and gooo.</div><!-- rasterized frame -->
-<div class="verticalspacer"></div>
-<form class="form-grp clearfix colelem" id="widgetu320" method="post" enctype="multipart/form-data" onSubmit="alert('This standard HTML form is configured to work with Adobe Business Catalyst.'); return false;"><!-- group -->
- <div class="fld-grp clearfix grpelem" id="widgetu322" data-required="true"><!-- group -->
-  <label class="fld-label actAsDiv clearfix grpelem" id="u325-4" for="widgetu322_input"><!-- content -->
-   <span class="actAsPara">Name:</span>
- </label>
- <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u323-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu322_input" name="FormFieldName" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu322_prompt" for="widgetu322_input"><span class="actAsPara">Your Name</span></label></span>
-</div>
-<div class="fld-grp clearfix grpelem" id="widgetu338" data-required="true" data-type="email"><!-- group -->
+  <div style="color: #fff; font-family: arial,sans-serif; font-size: 20px; float:right;text-align:right;font-weight: bold; left: 175px;margin-right:80px" nowrap="nowrap">Find it and gooo.</div><!-- rasterized frame -->
+  <div class="verticalspacer"></div>
+  <form class="form-grp clearfix colelem" id="widgetu320" method="post" enctype="multipart/form-data" onSubmit="alert('This standard HTML form is configured to work with Adobe Business Catalyst.'); return false;"><!-- group -->
+   <div class="fld-grp clearfix grpelem" id="widgetu322" data-required="true"><!-- group -->
+    <label class="fld-label actAsDiv clearfix grpelem" id="u325-4" for="widgetu322_input"><!-- content -->
+     <span class="actAsPara">Name:</span>
+   </label>
+   <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u323-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu322_input" name="FormFieldName" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu322_prompt" for="widgetu322_input"><span class="actAsPara">Your Name</span></label></span>
+ </div>
+ <div class="fld-grp clearfix grpelem" id="widgetu338" data-required="true" data-type="email"><!-- group -->
   <label class="fld-label actAsDiv clearfix grpelem" id="u339-4" for="widgetu338_input"><!-- content -->
    <span class="actAsPara">Email:</span>
  </label>
@@ -79,11 +78,11 @@
 <div class="clearfix colelem" id="pu345-14"><!-- group -->
  <div class="clearfix grpelem" id="u345-14"><!-- content -->
   <p id="u345-3"><%= link_to "Home", root_path, class: "nonblock" %></p>
-  <p id="u345-6"><%= link_to "About us", about_us_path, class: "nonblock" %></p>
-  <p id="u345-9"><%= link_to "Privacy", privacy_path, class: "nonblock" %></p>
+  <% @pages.each do |page| %>
   <p id="u345-12">
-    <%= link_to "Terms of Use", term_of_use_path, class: "nonblock" %>
-    </p>
+    <%= link_to page.title, custom_path(page.slug), class: "nonblock" %>
+  </p>
+  <% end %>
 </div>
 <div class="clearfix grpelem" id="pu346-4"><!-- column -->
   <div class="clearfix colelem" id="u346-4"><!-- content -->

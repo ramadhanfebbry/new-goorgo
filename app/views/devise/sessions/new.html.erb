@@ -1,0 +1,17 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html:{ :id => "login"}) do |f| %>
+    <h1 id="ff-proof" class="ribbon">Admin Login &nbsp;&nbsp;</h1>
+    <!-- <div class="apple">
+    	<div class="top"><span></span></div>
+    	<div class="butt"><span></span></div>
+    	<div class="bite"></div>
+	</div> -->
+
+    <fieldset id="inputs">
+        <input id="username" type="text" placeholder="Email" name="user[email]"/>
+        <input id="password" type="password"  placeholder="Password" name="user[password]"/>
+    </fieldset>
+    <fieldset id="actions">
+        <input type="submit" id="submit" value="Submit"/>
+       <p class="option">Copyright &copy;<a href="/"><span>2012 goorgo.com</span></a></p>
+    </fieldset>
+<% end %>
