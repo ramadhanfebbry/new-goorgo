@@ -6,9 +6,6 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -39,6 +36,12 @@ gem "mini_magick"
 gem 'better_errors'
 gem 'debugger'
 gem 'friendly_id'
+gem 'typhoeus'
+gem "eventmachine"
+gem "em-synchrony"
+gem "em-http-request"
+gem 'dalli'
+gem 'juggernaut'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
