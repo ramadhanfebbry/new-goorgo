@@ -9,8 +9,8 @@ gem 'rails', '3.2.13'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+	gem 'sass-rails',   '~> 3.2.3'
+	gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -18,10 +18,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+	gem 'better_errors'
+	gem 'debugger'
+end
+
 gem 'jquery-rails'
 gem 'devise'
 gem 'rails_admin'
-
 gem 'therubyracer'
 gem 'jquery-rails'
 gem 'amazon-ecs'
@@ -33,8 +37,6 @@ gem 'pg'
 gem "ckeditor"
 gem "carrierwave"
 gem "mini_magick"
-gem 'better_errors'
-gem 'debugger'
 gem 'friendly_id'
 gem 'typhoeus'
 gem "eventmachine"
@@ -42,6 +44,7 @@ gem "em-synchrony"
 gem "em-http-request"
 gem 'dalli'
 gem 'juggernaut'
+gem 'thin'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
