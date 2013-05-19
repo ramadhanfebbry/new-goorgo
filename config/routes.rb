@@ -9,7 +9,7 @@ end
 mount Ckeditor::Engine => "/ckeditor"
   
   # static pages
-  get '/:title' => 'pages#custom', as: :custom
+  get 'pages/:title' => 'pages#custom', as: :custom
   
   match 'about_us' => 'pages#about_us', as: :about_us
   match 'privacy' => 'pages#privacy', as: :privacy
