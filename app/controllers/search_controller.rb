@@ -24,7 +24,7 @@ class SearchController < ApplicationController
 			})
 		@results = req.items
 
-		render template: 'result'
+		render template: 'search/result'
 	end
 end
 

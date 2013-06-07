@@ -219,23 +219,23 @@
 
 #u332-17
 {
-	background: url("../../images/u332-17.png") no-repeat 0px 0px;
+	background: url("/images/u332-17.png") no-repeat 0px 0px;
 	position: relative;
 }
 
 #u332-17:hover
 {
-	background: url("../../images/u332-17-r.png") no-repeat 0px 0px;
+	background: url("/images/u332-17-r.png") no-repeat 0px 0px;
 }
 
 #u332-17:active
 {
-	background: url("../../images/u332-17-m.png") no-repeat 0px 0px;
+	background: url("/images/u332-17-m.png") no-repeat 0px 0px;
 }
 
 #widgetu320.frm-sub-st #u332-17
 {
-	background: url("../../images/u332-17-fs.png") no-repeat 0px 0px;
+	background: url("/images/u332-17-fs.png") no-repeat 0px 0px;
 }
 
 #widgetu327
