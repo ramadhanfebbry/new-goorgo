@@ -1,12 +1,15 @@
 NewGoorgo::Application.routes.draw do
-devise_for :users, :skip => [:sessions]
-as :user do
-  get 'admin/sign_in' => 'devise/sessions#new', :as => :new_user_session
-  post 'signin' => 'devise/sessions#create', :as => :user_session
-  delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
-end
+  resources :user_messages
+
+
+  devise_for :users, :skip => [:sessions]
+  as :user do
+    get 'admin/sign_in' => 'devise/sessions#new', :as => :new_user_session
+    post 'signin' => 'devise/sessions#create', :as => :user_session
+    delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-mount Ckeditor::Engine => "/ckeditor"
+  mount Ckeditor::Engine => "/ckeditor"
   
   # static pages
   get 'pages/:title' => 'pages#custom', as: :custom
