@@ -27,44 +27,54 @@
   <div style="clear:both"></div>
   <div style="padding-top:25px;
   ">
+    <% if false %>
   <form id="search-product" action="#">
+    
     <%= text_field_tag :search, params[:search] %>
     <div class="icon-submit-search">
       <a href="#"><%= image_tag("search.png", class: "img-btn-submit")%></a></div>
       <%= submit_tag :submit, id: "btn-submit-search"%>
     </form>
+    <% end %>
+
+       <%= form_tag search_path, id: "searchbox", method: :get do %>
+        <%= text_field_tag "search", nil, placeholder: "search here.." %>
+      <%= submit_tag "Search", id: "submit"  %>
+      <% end %>
+    
   </div>
   <div style="clear:both"></div>
   <div style="color: #fff; font-family: arial,sans-serif; font-size: 20px; float:right;text-align:right;font-weight: bold; left: 175px;margin-right:80px" nowrap="nowrap">Find it and gooo.</div><!-- rasterized frame -->
   <div class="verticalspacer"></div>
-  <form class="form-grp clearfix colelem" id="widgetu320" method="post" enctype="multipart/form-data" onSubmit="alert('This standard HTML form is configured to work with Adobe Business Catalyst.'); return false;"><!-- group -->
+  <form class="form-grp clearfix colelem" id="widgetu320" method="post" enctype="multipart/form-data" onSubmit="return false;" action="user_messages"><!-- group -->
    <div class="fld-grp clearfix grpelem" id="widgetu322" data-required="true"><!-- group -->
     <label class="fld-label actAsDiv clearfix grpelem" id="u325-4" for="widgetu322_input"><!-- content -->
      <span class="actAsPara">Name:</span>
    </label>
-   <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u323-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu322_input" name="FormFieldName" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu322_prompt" for="widgetu322_input"><span class="actAsPara">Your Name</span></label></span>
+   <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u323-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu322_input" name="user_message[name]" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu322_prompt" for="widgetu322_input"><span class="actAsPara">Your Name</span></label></span>
  </div>
  <div class="fld-grp clearfix grpelem" id="widgetu338" data-required="true" data-type="email"><!-- group -->
   <label class="fld-label actAsDiv clearfix grpelem" id="u339-4" for="widgetu338_input"><!-- content -->
    <span class="actAsPara">Email:</span>
  </label>
- <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u340-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu338_input" name="FormFieldName" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu338_prompt" for="widgetu338_input"><span class="actAsPara">name@email.com</span></label></span>
+ <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u340-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu338_input" name="user_message[email]" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu338_prompt" for="widgetu338_input"><span class="actAsPara">name@email.com</span></label></span>
 </div>
 <div class="clearfix grpelem" id="u343-4"><!-- content -->
   <p>Submitting Form...</p>
 </div>
 <div class="clearfix grpelem" id="u337-4"><!-- content -->
+  <br />
   <p>The server encountered an error.</p>
 </div>
 <div class="clearfix grpelem" id="u321-4"><!-- content -->
   <p>Form received.</p>
 </div>
-<input class="submit-btn NoWrap grpelem" id="u332-17" type="submit" value="" tabindex="4"/><!-- state-based BG images -->
+<input class="NoWrap grpelem" id="u332-17" type="submit" value="" tabindex="4"/><!-- state-based BG images -->
 <div class="fld-grp clearfix grpelem" id="widgetu327" data-required="false"><!-- group -->
   <label class="fld-label actAsDiv clearfix grpelem" id="u328-4" for="widgetu327_input"><!-- content -->
    <span class="actAsPara">Message:</span>
  </label>
- <span class="fld-textarea actAsDiv rounded-corners clearfix grpelem" id="u331-4"><!-- content --><textarea class="wrapped-input" id="widgetu327_input" name="FormFieldName" tabindex="3"></textarea><label class="wrapped-input fld-prompt" id="widgetu327_prompt" for="widgetu327_input"><span class="actAsPara">Add a brief message...</span></label></span>
+ <span class="fld-textarea actAsDiv rounded-corners clearfix grpelem" id="u331-4"><!-- content --><textarea class="wrapped-input" id="widgetu327_input" name="user_message[message]" tabindex="3"></textarea><label class="wrapped-input fld-prompt" id="widgetu327_prompt" for="widgetu327_input"><span class="actAsPara">Add a brief message...</span></label></span>
 </div>
 </form>
 <div class="clearfix colelem" id="pu344-4"><!-- group -->

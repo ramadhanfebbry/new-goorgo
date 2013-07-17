@@ -14,14 +14,18 @@
 //= require jquery_ujs
 //= require ckeditor/init
 //= require_tree .
+$(function(){
 
 searchProduct = function (){
   var q = $("#search").val()
 
   if(q.length == 0){
+  	alert('asdd')
     return false;
   }else{
-    document.location = "/result?q="+q
+  	alert('asdd2')
+  	document.location = "/result?q="+q
+  	return true;
   }
 }
 
@@ -29,8 +33,9 @@ $("#search-product").submit(function(){
   searchProduct()
 })
 
-$(".icon-submit-search").bind("click", function(){
+$(".icon-submit-search").click(function(){
   searchProduct();
 })
 
-$("#u1300").click(function(){document.location='/'})
+$("#u1300").click(function(){document.location='/'})	
+})

@@ -767,7 +767,7 @@ html
 	z-index: 29;
 	width: 200px;
 	min-height: 21px;
-	padding-top: 4px;
+	/*padding-top: 4px;*/
 	margin-right: -10000px;
 	margin-top: 240px;
 	left: 141px;
@@ -784,7 +784,7 @@ html
 	min-height: 31px;
 	width: 131px;
 	margin-right: -10000px;
-	margin-top: 258px;
+	margin-top: 271px;
 	left: 91px;
 }
 

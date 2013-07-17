@@ -1,151 +1,169 @@
 <% content_for :head do %>
-<link rel="stylesheet" type="text/css" href="/assets/css/master_b-master.css?126029968"/>
-<link rel="stylesheet" type="text/css" href="/assets/css/product-search.css?4153255840" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/master_b-master.css?126029968"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/product-search.css?4153255840" id="pagesheet"/>
 <% end %>
 
 <div class="clearfix" id="page"><!-- column -->
- <div class="position_content" id="page_position_content">
-  <div class="clearfix colelem" id="u1781"><!-- group -->
-   <div class="clearfix grpelem" id="u598"><!-- group -->
-    <div class="shadow gradient grpelem" id="u530"><!-- simple frame --></div>
-  </div>
-  <div class="grpelem" id="u1292"><!-- image -->
-    
-  <div style="clear:both"></div>
-  <div style="padding-top:25px;
-  ">
-  <form id="search-product" action="#">
-    <%= text_field_tag :search, params[:search] %>
-    <div class="icon-submit-search">
-    <a href="#"><%= image_tag("search.png", class: "img-btn-submit")%></a></div>
-    <%= submit_tag :submit, id: "btn-submit-search"%>
-  </form>
-  </div>
-  <div style="clear:both"></div>
-  </div>
-  
-  <div class="grpelem" id="u1300"><!-- image -->
-    <img class="block" id="u1300_img" src="images/goorgo-logo.png" alt="" width="193" height="77"/>
-  </div>
-  <div class="clearfix grpelem" id="u1304-4"><!-- content -->
-    <p>goorgo.com</p>
-  </div>
-</div>
+  <div class="position_content" id="page_position_content">
+    <div class="clearfix colelem" id="u1781"><!-- group -->
+      <div class="clearfix grpelem" id="u598"><!-- group -->
+        <div class="shadow gradient grpelem" id="u530"><!-- simple frame --></div>
+      </div>
+      <div class="grpelem" id="u1292"><!-- image -->
 
-<% @results.each do |item| %>
-<div class="clearfix colelem" id="u1667"><!-- group -->
- <div class="clearfix grpelem" id="pu1676"><!-- group -->
-  <img class="grpelem" id="u1676" src="images/card-u1676.png" alt="" width="348" height="422"/><!-- rasterized frame -->
-  <div class="grpelem" id="u1674"><!-- image -->
-   <img class="block" id="u1674_img" src="images/star.png" alt="" width="16" height="16"/>
- </div>
- <div class="grpelem" id="u1672"><!-- image -->
-   <img class="block" id="u1672_img" src="images/star.png" alt="" width="16" height="16"/>
- </div>
- <div class="grpelem" id="u1668"><!-- image -->
-   <img class="block" id="u1668_img" src="images/star.png" alt="" width="16" height="16"/>
- </div>
- <div class="grpelem" id="u1686"><!-- image -->
-   <img class="block" id="u1686_img" src="images/star.png" alt="" width="16" height="16"/>
- </div>
- <div class="grpelem" id="u1682"><!-- image -->
-   <img class="block" id="u1682_img" src="images/star.png" alt="" width="16" height="16"/>
- </div>
- <div class="clearfix grpelem" id="u1688-4"><!-- content -->
-   <p>1022</p>
- </div>
- <div class="grpelem" id="u1670"><!-- image -->
-  <%= image_tag(item.get_hash("LargeImage")["URL"], style: "width:200px;height:179px") %>
+        <div style="clear:both"></div>
+        <div style="padding-top:25px;
+             ">
+               <% if false %>
+            <form id="search-product" action="#">
+              <%= text_field_tag :search, params[:search] %>
+              <div class="icon-submit-search">
+                <a href="#"><%= image_tag("search.png", class: "img-btn-submit")%></a></div>
+                <%= submit_tag :submit, id: "btn-submit-search"%>
+              </form>
+            <% end %>
+            <%= form_tag search_path, id: "searchbox", method: :get do %>
+              <%= text_field_tag "search", nil, placeholder: "search here.." %>
+              <%= submit_tag "Search", id: "submit"  %>
+            <% end %>
+          </div>
+          <div style="clear:both"></div>
+        </div>
 
-</div>
-<div class="grpelem" id="u1684"><!-- image -->
- <img class="block" id="u1684_img" src="images/icon_15.gif" alt="" width="76" height="63"/>
-</div>
-<div class="clearfix grpelem" id="u1678-6"><!-- content -->
- <p id="u1678-2"><%= truncate(Nokogiri::HTML(item.get_hash("ItemAttributes")["Title"]).text, length: 25) %></p>
- <p id="u1678-4"><%= Nokogiri::HTML(item.get_hash("ItemAttributes")["ProductTypeName"]).text %></p>
-</div>
-<a class="nonblock nontext grpelem" id="u1679" href="<%= item.get("DetailPageURL") %>" title="Check prices at Amazon.com"><!-- state-based BG images --><img id="u1679_states" alt="Check prices at Amazon.com" src="images/blank.gif"/></a>
-</div>
-<div class="clearfix grpelem" id="u1681-15"><!-- content -->
-  <p id="u1681-3"><%= Nokogiri::HTML(item.get_hash("ItemAttributes")["Title"]).text %> <br /><span id="u1681-2">
-    <% reviews = item/'EditorialReview' %>
-    <% reviews.each do |review| %>
-    <% doc = Nokogiri::HTML(Amazon::Element.get_unescaped(review, 'Content'))
-    %>
-    <%= truncate_html(doc.text, lenght: 50) %>
-    <% end %>
-    <p id="u1681-6"><span id="u1681-4">
-      <%= Nokogiri::HTML(item.get_hash("ItemAttributes")["ListPrice"]).css("formattedprice").text %>
-    </span>&nbsp;</p>
-    <p id="u1681-8">In Stock.</p>
-    <p id="u1681-12">Product Features
-      <%= link_to "Buy now from Amazon.com", item.get("DetailPageURL"), class: "nonblock" %></p>
-      <p>&nbsp;</p>
+        <div class="grpelem" id="u1300"><!-- image -->
+          <img class="block" id="u1300_img" src="images/goorgo-logo.png" alt="" width="193" height="77"/>
+        </div>
+        <div class="clearfix grpelem" id="u1304-4"><!-- content -->
+          <p>goorgo.com</p>
+        </div>
+      </div>
+
+      <% @results.each do |item| %>
+        <div class="clearfix colelem" id="u1667"><!-- group -->
+          <div class="clearfix grpelem" id="pu1676"><!-- group -->
+            <img class="grpelem" id="u1676" src="images/card-u1676.png" alt="" width="348" height="422"/><!-- rasterized frame -->
+            <div class="grpelem" id="u1674"><!-- image -->
+              <img class="block" id="u1674_img" src="images/star.png" alt="" width="16" height="16"/>
+            </div>
+            <div class="grpelem" id="u1672"><!-- image -->
+              <img class="block" id="u1672_img" src="images/star.png" alt="" width="16" height="16"/>
+            </div>
+            <div class="grpelem" id="u1668"><!-- image -->
+              <img class="block" id="u1668_img" src="images/star.png" alt="" width="16" height="16"/>
+            </div>
+            <div class="grpelem" id="u1686"><!-- image -->
+              <img class="block" id="u1686_img" src="images/star.png" alt="" width="16" height="16"/>
+            </div>
+            <div class="grpelem" id="u1682"><!-- image -->
+              <img class="block" id="u1682_img" src="images/star.png" alt="" width="16" height="16"/>
+            </div>
+            <div class="clearfix grpelem" id="u1688-4"><!-- content -->
+              <p>1022</p>
+            </div>
+            <div class="grpelem" id="u1670"><!-- image -->
+              <%= image_tag(item.get_hash("LargeImage")["URL"], style: "width:200px;height:179px") %>
+
+            </div>
+            <div class="grpelem" id="u1684"><!-- image -->
+              <img class="block" id="u1684_img" src="images/icon_15.gif" alt="" width="76" height="63"/>
+            </div>
+            <div class="clearfix grpelem" id="u1678-6"><!-- content -->
+              <p id="u1678-2"><%= truncate(Nokogiri::HTML(item.get_hash("ItemAttributes")["Title"]).text, length: 25) %></p>
+              <p id="u1678-4"><%= Nokogiri::HTML(item.get_hash("ItemAttributes")["ProductTypeName"]).text %></p>
+            </div>
+            <a class="nonblock nontext grpelem" id="u1679" href="<%= item.get("DetailPageURL") %>" title="Check prices at Amazon.com"><!-- state-based BG images --><img id="u1679_states" alt="Check prices at Amazon.com" src="images/blank.gif"/></a>
+          </div>
+          <div class="clearfix grpelem" id="u1681-15"><!-- content -->
+            <p id="u1681-3"><%= Nokogiri::HTML(item.get_hash("ItemAttributes")["Title"]).text %> <br /><span id="u1681-2">
+                <% reviews = item/'EditorialReview' %>
+                <% unless reviews.blank? %>
+                <% reviews.each do |review| %>
+                  <% doc = Nokogiri::HTML(Amazon::Element.get_unescaped(review, 'Content'))
+                %>
+                  <%= truncate_html(doc.text, lenght: 50) %>
+                <% end %>
+                <% end %>
+                <p id="u1681-6"><span id="u1681-4">
+                    <%= Nokogiri::HTML(item.get_hash("ItemAttributes")["ListPrice"]).css("formattedprice").text %>
+                  </span>&nbsp;</p>
+                <p id="u1681-8">In Stock.</p>
+                <p id="u1681-12">Product Features
+                  <%= link_to "Buy now from Amazon.com", item.get("DetailPageURL"), class: "nonblock" %></p>
+                  <p>&nbsp;</p>
+            </div>
+          </div>
+        <% end %>
+
+
+
+        <div class="clearfix colelem" id="u727-6"><!-- content -->
+          <p class="paginate"><span id="u727">Page</span>&nbsp;&nbsp;&nbsp;&nbsp; <%= link_to "1", search_path(search: params[:search], page: 1) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= link_to "2", search_path(search: params[:search], page: 2)%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= link_to "3", search_path(search: params[:search], page: 3)%>&nbsp;&nbsp;&nbsp; <span id="u727-3">&gt;&gt;</span></p>
+        </div>
+        <div class="verticalspacer"></div>
+        <div class="clearfix colelem" id="u1876"><!-- group -->
+          <div class="clearfix grpelem" id="pu1389"><!-- column -->
+            <a class="nonblock nontext colelem" id="u1389" href="index.html"><!-- image --><img class="block" id="u1389_img" src="images/goorgo-logo.png" alt="" width="233" height="93"/></a>
+            <div class="clearfix colelem" id="u1394-7"><!-- content -->
+              <p>©&nbsp; 2013 <a class="nonblock" href="index.html">www.GoorGo.com</a>&nbsp;All Rights Reserved</p>
+            </div>
+          </div>
+          <div class="clearfix grpelem" id="pu1391-4"><!-- column -->
+            <div class="clearfix colelem" id="u1391-4"><!-- content -->
+              <p id="u1391-2">Help</p>
+            </div>
+            <div class="clearfix colelem" id="u1393-14"><!-- content -->
+              <p id="u1393-3"><a class="nonblock" href="index.html" target="_blank">Home</a></p>
+              <p id="u1393-6"><a class="nonblock" href="about-us.html" target="_blank">About us</a></p>
+              <p id="u1393-9"><a class="nonblock" href="privacy.html" target="_blank">Privacy</a></p>
+              <p id="u1393-12"><a class="nonblock" href="term-of-use.html" target="_blank">Terms of Use</a></p>
+            </div>
+          </div>
+          <div class="clearfix grpelem" id="pu1420-4"><!-- column -->
+            <div class="clearfix colelem" id="u1420-4"><!-- content -->
+              <p id="u1420-2">Catalogue</p>
+            </div>
+            <div class="clearfix colelem" id="u1392-4"><!-- content -->
+              <p id="u1392-2">Books | Cameras &amp; Camcorders | Mobiles &amp; Accessories | Apparel &amp; Accessories | Jewellery &amp; Watches | Electronics | Home &amp; Kitchen | Toys &amp; Games | Gifts &amp; Flowers | Computer &amp; Peripherals | Kids &amp; Baby | Health &amp; Beauty | Household Appliances | Footwear | Clothing | Accessories | Watches | Office &amp; Stationary | All Brands</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
     </div>
-  </div>
-  <% end %>
+    <div class="preload_images">
+      <img class="preload" src="images/u1560_states-r.png" alt=""/>
+      <img class="preload" src="images/u1586_states-r.png" alt=""/>
+      <img class="preload" src="images/u1617_states-r.png" alt=""/>
+      <img class="preload" src="images/u1648_states-r.png" alt=""/>
+      <img class="preload" src="images/u1679_states-r.png" alt=""/>
+    </div>
 
+    <script type="text/javascript">
+      if (document.location.protocol != 'https:')
+        document.write('\x3Cscript src="http://musecdn.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+    </script>
+    <script type="text/javascript">
+      window.jQuery || document.write('\x3Cscript src="scripts/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+    </script>
+    <script src="scripts/museutils.js?4076886207" type="text/javascript"></script>
+    <script src="scripts/jquery.watch.js?4068933136" type="text/javascript"></script>
+    <!-- Other scripts -->
+    <script type="text/javascript">
+      Muse.Utils.addSelectorFn('body', Muse.Utils.transformMarkupToFixBrowserProblemsPreInit);/* body */
+      Muse.Utils.addSelectorFn('body', Muse.Utils.prepHyperlinks); /* body */
+      Muse.Utils.addSelectorFn('body', function() {
+        Muse.Utils.fullPage('#page');
+      }); /* 100% height page */
+      Muse.Utils.addSelectorFn('body', Muse.Utils.showWidgetsWhenReady);/* body */
+      Muse.Utils.addSelectorFn('body', Muse.Utils.transformMarkupToFixBrowserProblems);/* body */
 
-
-  <div class="clearfix colelem" id="u727-6"><!-- content -->
-   <p class="paginate"><span id="u727">Page</span>&nbsp;&nbsp;&nbsp;&nbsp; <%= link_to "1", search_path(search: params[:search], page: 1) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= link_to "2", search_path(search: params[:search], page: 2)%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= link_to "3", search_path(search: params[:search], page: 3)%>&nbsp;&nbsp;&nbsp; <span id="u727-3">&gt;&gt;</span></p>
- </div>
- <div class="verticalspacer"></div>
- <div class="clearfix colelem" id="u1876"><!-- group -->
-   <div class="clearfix grpelem" id="pu1389"><!-- column -->
-    <a class="nonblock nontext colelem" id="u1389" href="index.html"><!-- image --><img class="block" id="u1389_img" src="images/goorgo-logo.png" alt="" width="233" height="93"/></a>
-    <div class="clearfix colelem" id="u1394-7"><!-- content -->
-     <p>©&nbsp; 2013 <a class="nonblock" href="index.html">www.GoorGo.com</a>&nbsp;All Rights Reserved</p>
-   </div>
- </div>
- <div class="clearfix grpelem" id="pu1391-4"><!-- column -->
-  <div class="clearfix colelem" id="u1391-4"><!-- content -->
-   <p id="u1391-2">Help</p>
- </div>
- <div class="clearfix colelem" id="u1393-14"><!-- content -->
-   <p id="u1393-3"><a class="nonblock" href="index.html" target="_blank">Home</a></p>
-   <p id="u1393-6"><a class="nonblock" href="about-us.html" target="_blank">About us</a></p>
-   <p id="u1393-9"><a class="nonblock" href="privacy.html" target="_blank">Privacy</a></p>
-   <p id="u1393-12"><a class="nonblock" href="term-of-use.html" target="_blank">Terms of Use</a></p>
- </div>
-</div>
-<div class="clearfix grpelem" id="pu1420-4"><!-- column -->
-  <div class="clearfix colelem" id="u1420-4"><!-- content -->
-   <p id="u1420-2">Catalogue</p>
- </div>
- <div class="clearfix colelem" id="u1392-4"><!-- content -->
-   <p id="u1392-2">Books | Cameras &amp; Camcorders | Mobiles &amp; Accessories | Apparel &amp; Accessories | Jewellery &amp; Watches | Electronics | Home &amp; Kitchen | Toys &amp; Games | Gifts &amp; Flowers | Computer &amp; Peripherals | Kids &amp; Baby | Health &amp; Beauty | Household Appliances | Footwear | Clothing | Accessories | Watches | Office &amp; Stationary | All Brands</p>
- </div>
-</div>
-
-
-</div>
-</div>
-</div>
-<div class="preload_images">
- <img class="preload" src="images/u1560_states-r.png" alt=""/>
- <img class="preload" src="images/u1586_states-r.png" alt=""/>
- <img class="preload" src="images/u1617_states-r.png" alt=""/>
- <img class="preload" src="images/u1648_states-r.png" alt=""/>
- <img class="preload" src="images/u1679_states-r.png" alt=""/>
-</div>
-
-<script type="text/javascript">
- if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
-</script>
-<script type="text/javascript">
- window.jQuery || document.write('\x3Cscript src="scripts/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
-</script>
-<script src="scripts/museutils.js?4076886207" type="text/javascript"></script>
-<script src="scripts/jquery.watch.js?4068933136" type="text/javascript"></script>
-<!-- Other scripts -->
-<script type="text/javascript">
- Muse.Utils.addSelectorFn('body', Muse.Utils.transformMarkupToFixBrowserProblemsPreInit);/* body */
- Muse.Utils.addSelectorFn('body', Muse.Utils.prepHyperlinks); /* body */
- Muse.Utils.addSelectorFn('body', function() { Muse.Utils.fullPage('#page'); }); /* 100% height page */
- Muse.Utils.addSelectorFn('body', Muse.Utils.showWidgetsWhenReady);/* body */
- Muse.Utils.addSelectorFn('body', Muse.Utils.transformMarkupToFixBrowserProblems);/* body */
-
-</script>
-</body>
+    </script>
+    <style>
+      #search {
+        width: 73%;
+      }
+      #submit {
+        width: 20%;
+      }
+      </style>
