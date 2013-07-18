@@ -77,11 +77,11 @@
             <p id="u1681-3"><%= Nokogiri::HTML(item.get_hash("ItemAttributes")["Title"]).text %> <br /><span id="u1681-2">
                 <% reviews = item/'EditorialReview' %>
                 <% unless reviews.blank? %>
-                <% reviews.each do |review| %>
-                  <% doc = Nokogiri::HTML(Amazon::Element.get_unescaped(review, 'Content'))
-                %>
-                  <%= truncate_html(doc.text, lenght: 50) %>
-                <% end %>
+                  <% reviews.each do |review| %>
+                    <% doc = Nokogiri::HTML(Amazon::Element.get_unescaped(review, 'Content'))
+                  %>
+                    <%= truncate_html(doc.text, lenght: 50) %>
+                  <% end %>
                 <% end %>
                 <p id="u1681-6"><span id="u1681-4">
                     <%= Nokogiri::HTML(item.get_hash("ItemAttributes")["ListPrice"]).css("formattedprice").text %>
@@ -166,4 +166,17 @@
       #submit {
         width: 20%;
       }
-      </style>
+    </style>
+
+    <script type="text/javascript">
+      $(function() {
+        $("p#u1681-12 .nonblock").click(function() {
+          
+       function unloadPage(){
+           return "dont leave me this way";
+       }
+       window.onbeforeunload = unloadPage;
+        })
+      })
+
+    </script>
